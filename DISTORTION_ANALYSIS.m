@@ -1,6 +1,7 @@
-clear; clc;
+clear; clc; close all;
 
 sampleRate = 44100;
+
 timePerSecond = 1 / sampleRate;
 
 t = [0:timePerSecond:1].';
@@ -33,9 +34,9 @@ in2 = sin(2*pi*f2*t);
 % out2 = hardClip(in2, threshold);
 
 % Cubic Clipping
-% coeff = 1;
-% out1 = cubicClip(in1, coeff);
-% out2 = cubicClip(in2, coeff);
+coeff = 1;
+out1 = cubicClip(in1, coeff);
+out2 = cubicClip(in2, coeff);
 
 % ArcTan Clipping
 % coeff = 7;
@@ -65,9 +66,9 @@ in2 = sin(2*pi*f2*t);
 % out2 = bitClip(in2, bits);
 
 % DC Offset Clipping
-dc = -0.2;
-out1 = dcOffsetClip(in1, dc);
-out2 = dcOffsetClip(in2, dc);
+% dc = -0.2;
+% out1 = dcOffsetClip(in1, dc);
+% out2 = dcOffsetClip(in2, dc);
 
 % Plotting the input Wave Forms
 figure(1);
@@ -90,3 +91,4 @@ legend('Linear', 'Distortion'); title('Characteristic Curve');
 figure(2);
 thd(out2, sampleRate, 5);
 axis([0 24 -50 0]);
+
