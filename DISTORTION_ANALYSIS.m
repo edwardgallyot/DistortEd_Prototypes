@@ -33,10 +33,41 @@ in2 = sin(2*pi*f2*t);
 % out2 = hardClip(in2, threshold);
 
 % Cubic Clipping
-coeff = 1.5;
-out1 = cubicClip(in1, coeff);
-out2 = cubicClip(in2, coeff);
+% coeff = 1;
+% out1 = cubicClip(in1, coeff);
+% out2 = cubicClip(in2, coeff);
 
+% ArcTan Clipping
+% coeff = 7;
+% out1 = arcTanClip(in1, coeff);
+% out2 = arcTanClip(in2, coeff);
+
+% Sine Clipping
+% out1 = sineClip(in1);
+% out2 = sineClip(in2);
+
+% Exponential Clipping
+% coeff = 3;
+% out1 = expClip(in1, coeff);
+% out2 = expClip(in2, coeff);
+
+% Piece Wise Clipping
+% out1 = pieceWiseClip(in1);
+% out2 = pieceWiseClip(in2);
+
+% Diode Clipping
+% out1 = diodeClip(in1);
+% out2 = diodeClip(in2);
+
+% Bit Crush Clipping
+% bits = 8;
+% out1 = bitClip(in1, bits);
+% out2 = bitClip(in2, bits);
+
+% DC Offset Clipping
+dc = -0.2;
+out1 = dcOffsetClip(in1, dc);
+out2 = dcOffsetClip(in2, dc);
 
 % Plotting the input Wave Forms
 figure(1);
