@@ -1,9 +1,10 @@
-function [out] = fullWaveRect(in)
+function [out] = hardClip(in)
 %HALFWAVERECT Half Wave Rectification
 %   All positive values are the signal at that point in time
 %   All negative values are 0
 
 N = length(in);
+out = 
 
 for n = 1:N
     if in(n,1) >= 0

@@ -24,8 +24,19 @@ in2 = sin(2*pi*f2*t);
 % out2 = halfWaveRect(in2);
 
 % Full Wave Rectification
-out1 = fullWaveRect(in1);
-out2 = fullWaveRect(in2);
+% out1 = fullWaveRect(in1);
+% out2 = fullWaveRect(in2);
+
+% Hard Clipping Based on a Threshold
+% threshold = 0.5;
+% out1 = hardClip(in1, threshold);
+% out2 = hardClip(in2, threshold);
+
+% Cubic Clipping
+coeff = 1.5;
+out1 = cubicClip(in1, coeff);
+out2 = cubicClip(in2, coeff);
+
 
 % Plotting the input Wave Forms
 figure(1);
